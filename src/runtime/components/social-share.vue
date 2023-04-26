@@ -177,7 +177,7 @@ const copyToClipboard = () => {
   border-radius: 6px;
   border: 1px solid rgba(0,0,0,0.1);
   padding: 2em;
-  min-width: 300px;
+  min-width: 350px;
   z-index: 100;
 }
 
@@ -262,14 +262,13 @@ const copyToClipboard = () => {
 
 .social-share-link {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 25px;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
 .social-share-link--input {
-  width: 100%;
   padding: 8px 10px;
   border: none;
 }
@@ -279,5 +278,6 @@ const copyToClipboard = () => {
   border-left: 1px solid #ddd;
   cursor: pointer;
   background: transparent;
+  flex-basis: 15%;
 }
 </style>
