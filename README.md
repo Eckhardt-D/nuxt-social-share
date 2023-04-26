@@ -14,6 +14,7 @@ Easy social share for Nuxt for doing amazing things.
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
+
 - 💡 &nbsp;Single customizable component for sharing
 - 🚀 &nbsp;Share to Twitter, Facebook, Reddit, LinkedIn and WhatsApp
 - 🔨 &nbsp;Configure where you can share to
@@ -40,27 +41,33 @@ npm install --save-dev @eckidevs/nuxt-social-share
 
 ```js
 export default defineNuxtConfig({
-  modules: [
-    '@eckidevs/nuxt-social-share'
-  ]
-})
+  modules: ["@eckidevs/nuxt-social-share"],
+});
 ```
 
 That's it! You can now use Nuxt Social Share in your Nuxt app ✨
 
 ## Usage
 
+### SocialShare Component Props
+
+- `url` (optional): The url to share, defaults to location.href
+- `platforms` (optional): The platforms to show share for, defaults to facebook,reddit,twitter,whatsapp,linkedin
+- `text` (optional): The extra text to show with the post if supported
+
 Simply add the component to where you want to render the share button
+
 ```vue
 <template>
   <article>
-    <SocialShare />
+    <SocialShare text="Check out this cool post!" />
     <h1>My cool post</h1>
   </article>
 </template>
 ```
 
 At a basic level this handles everything and uses the current `location.href` as the link to share. You can configure the share link too:
+
 ```vue
 <template>
   <article>
@@ -97,11 +104,12 @@ The available options are:
 ### Overriding Nuxt Social Share button slot
 
 You can also use your own button for the sharing:
+
 ```vue
 <template>
   <article>
     <SocialShare url="/relative">
-      <template #activator={ on }>
+      <template #activator="{" on }>
         <button v-on="on">Share this!</button>
       </template>
     </SocialShare>
@@ -112,14 +120,12 @@ You can also use your own button for the sharing:
 ```
 
 <!-- Badges -->
+
 [npm-version-src]: https://img.shields.io/npm/v/@eckidevs/nuxt-social-share/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-version-href]: https://npmjs.com/package/@eckidevs/nuxt-social-share
-
 [npm-downloads-src]: https://img.shields.io/npm/dm/@eckidevs/nuxt-social-share.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-downloads-href]: https://npmjs.com/package/@eckidevs/nuxt-social-share
-
 [license-src]: https://img.shields.io/npm/l/@eckidevs/nuxt-social-share.svg?style=flat&colorA=18181B&colorB=28CF8D
 [license-href]: https://npmjs.com/package/@eckidevs/nuxt-social-share
-
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com

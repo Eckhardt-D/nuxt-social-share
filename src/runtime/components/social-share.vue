@@ -13,7 +13,9 @@ const currentLocation = ref(typeof location !== 'undefined' ? location.href : ''
 const props = withDefaults(defineProps<{
   url?: string;
   platforms?: Platforms[];
+  text?: string;
 }>(), {
+  text: '',
   url: typeof location !== 'undefined' ? location.href : '',
   platforms: () => ["facebook", "twitter", "whatsapp", "linkedin", "reddit"]
 })
@@ -43,10 +45,10 @@ watch(() => props.url, (value: string) => {
 
 const urls = computed(() => typeof window !== 'undefined' && ({
   facebook: `https://www.facebook.com/sharer.php?u=${currentLocation.value}`,
-  twitter: `https://twitter.com/share?url=${currentLocation.value}`,
-  whatsapp: `https://api.whatsapp.com/send?text=${currentLocation.value}`,
-  linkedin: `https://www.linkedin.com/shareArticle?url=${currentLocation.value}`,
-  reddit: `https://reddit.com/submit?url=${currentLocation.value}`,
+  twitter: `https://twitter.com/share?text=${props.text}&url=${currentLocation.value}`,
+  whatsapp: `https://api.whatsapp.com/send?text=${props.text}%20${currentLocation.value}`,
+  linkedin: `https://www.linkedin.com/shareArticle?title=${props.text}&url=${currentLocation.value}`,
+  reddit: `https://reddit.com/submit?title=${props.text}&url=${currentLocation.value}`,
 }));
 
 const socials = {
@@ -112,6 +114,8 @@ const copyToClipboard = () => {
               v-for="platform in platforms"
               :key="urls[platform]"
               :href="urls[platform]"
+              target="_blank"
+              rel="noopener noreferer"
               class="social-share-buttons__button"
             >
               <component

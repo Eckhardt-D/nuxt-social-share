@@ -11,7 +11,8 @@ const {data: posts} = useAsyncData(() => $fetch('/api/posts'));
       class="post-card"
     >
       <SocialShare
-        :url="`/posts/${post.id}`"
+        text="Check this out!"
+        url="https://auditio.cc"
       />
       <h1>
         <NuxtLink
