@@ -270,6 +270,7 @@ const copyToClipboard = () => {
 
 .social-share-link--input {
   padding: 8px 10px;
+  flex-basis: 85%;
   border: none;
 }
 
