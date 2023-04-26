@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { ShareIcon, ClipboardIcon, CheckIcon } from "@heroicons/vue/24/outline/index";
+import { ref, computed, onMounted, watch } from "vue";
 import FacebookIcon from "./svgs/facebook-icon.vue";
 import TwitterIcon from "./svgs/twitter-icon.vue";
 import WhatsappIcon from "./svgs/whatsapp-icon.vue";
@@ -25,7 +26,7 @@ onMounted(() => {
   } else if (props.url.startsWith('http')) {
     currentLocation.value = props.url
   } else {
-    currentLocation.value = new URL(props.url, location.origin);
+    currentLocation.value = new URL(props.url, location.origin).toString();
   }
 })
 
@@ -35,7 +36,7 @@ watch(() => props.url, (value: string) => {
     if (value.startsWith('http')) {
     currentLocation.value = value
   } else {
-    currentLocation.value = new URL(value, location.origin);
+    currentLocation.value = new URL(value, location.origin).toString();
   }
   }
 })

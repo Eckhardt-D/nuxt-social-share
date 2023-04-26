@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useAsyncData } from '#imports';
 const {data: posts} = useAsyncData(() => $fetch('/api/posts'));
 </script>
 
