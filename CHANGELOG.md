@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.1.5
+
+[compare changes](https://undefined/undefined/compare/v0.1.4...v0.1.5)
+
+
+### 🚀 Enhancements
+
+  - Better backdrop (6185abd)
+  - Add text prop for supported (bf665ed)
+
+### 🩹 Fixes
+
+  - Input flex-basis (5f54d50)
+
+### ❤️  Contributors
+
+- Eckhardt-D <eckhardt.dreyer@gmail.com>
+
 ## v0.1.4
 
 [compare changes](https://undefined/undefined/compare/v0.1.3...v0.1.4)
