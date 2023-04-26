@@ -279,5 +279,7 @@ const copyToClipboard = () => {
   cursor: pointer;
   background: transparent;
   flex-basis: 15%;
+  display: grid;
+  place-items: center;
 }
 </style>
