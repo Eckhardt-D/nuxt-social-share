@@ -90,6 +90,7 @@ const copyToClipboard = () => {
         class="social-share-overlay"
         @click="open=false"
       >
+        <div class="social-share-overlay__backdrop" />
         <div
           class="social-share-card"
           @click.stop
@@ -163,21 +164,26 @@ const copyToClipboard = () => {
 <style scoped>
 .social-share-overlay {
   position: fixed;
-  background: rgba(0,0,0,0.1);
   inset: 0;
   z-index: 99;
   display: grid;
   place-items: center;
 }
 
+.social-share-overlay__backdrop {
+  background: rgba(0,0,0,0.1);
+  position: absolute;
+  inset: 0;
+}
+
 .social-share-card {
   position: relative;
-  background: #f4f4f4;
+  background: #fff;
   box-shadow: 2px 2px 9px rgba(0,0,0,0.1);
   border-radius: 6px;
   border: 1px solid rgba(0,0,0,0.1);
   padding: 2em;
-  min-width: 350px;
+  min-width: min(350px, 90vw);
   z-index: 100;
 }
 
